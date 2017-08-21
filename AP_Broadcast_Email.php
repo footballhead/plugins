@@ -43,8 +43,7 @@ if (isset($_POST['confirm']))
 
 	$sql = "SELECT count(*) AS usercount
 				FROM ".$db->prefix."users
-				WHERE username != 'Guest'
-				ORDER BY username";
+				WHERE username != 'Guest'";
 	$result = $db->query($sql) or error('Could not get user count from database', __FILE__, __LINE__, $db->error());
    	$row = $db->fetch_assoc($result);
 
@@ -116,8 +115,7 @@ else if (isset($_POST['send_message']))
 
 	$sql = "SELECT username, email
 				FROM ".$db->prefix."users
-				WHERE username != 'Guest'
-				ORDER BY username";
+				WHERE username != 'Guest'";
 	$result = $db->query($sql) or error('Could not get users from the database', __FILE__, __LINE__, $db->error());
    	while($row = $db->fetch_assoc($result))
    	{
